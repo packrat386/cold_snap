@@ -4,10 +4,9 @@ Feature: accounts
   So that I can see the weather
 
   Scenario: Create Account
-    Given I visit the "users/signup" page
-    And I enter "vcarl" as my "username"
-    And I enter "secret" as my "password"
+    Given I visit the "users/sign_up" page
     And I enter "vcarl@butts.com" as my "email"
+    And I enter "secret" as my "password"
     When I click "Sign up"
     Then I should sign up successfully
     
