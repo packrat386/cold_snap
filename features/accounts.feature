@@ -6,12 +6,12 @@ Feature: accounts
   Scenario: Create Account
     Given I visit the "users/sign_up" page
     And I enter "vcarl@butts.com" as my "email"
-    And I enter "secret" as my "password"
+    And I enter "secretsauce" as my "password"
     When I click "Sign up"
     Then I should sign up successfully
     
   Scenario: Successful Login
-    Given "vcarl" and "secret" are a valid username and password
+    Given "vcarl@butts.com" and "secretsauce" are a valid email and password
     And I visit the "login" page
     And I enter "vcarl" as my "username"
     And I enter "secret" as my "password"
@@ -19,7 +19,7 @@ Feature: accounts
     Then I should be logged in
     
   Scenario: Unsuccessful Login
-    Given "vcarl" and "secret" are not a valid username and password
+    Given "vcarl@butts.com" and "secretsauce" are not a valid email and password
     And I visit the "login" page
     And I enter "vcarl" as my "username"
     And I enter "secret" as my "password"
