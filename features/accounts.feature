@@ -12,7 +12,7 @@ Feature: accounts
     Then I should sign up successfully
     
   Scenario: Successful Login
-    Given "vcarl" and "secret" are a valid userame and password
+    Given "vcarl" and "secret" are a valid username and password
     And I visit the "login" page
     And I enter "vcarl" as my "username"
     And I enter "secret" as my "password"
@@ -20,7 +20,7 @@ Feature: accounts
     Then I should be logged in
     
   Scenario: Unsuccessful Login
-    Given "vcarl" and "secret" are not a valid userame and password
+    Given "vcarl" and "secret" are not a valid username and password
     And I visit the "login" page
     And I enter "vcarl" as my "username"
     And I enter "secret" as my "password"

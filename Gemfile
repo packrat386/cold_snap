@@ -17,6 +17,9 @@ gem 'coffee-rails', '~> 4.1.0'
 # Use haml
 gem "haml", '4.0.6'
 
+# Use devise
+gem 'devise'
+
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
@@ -36,7 +39,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
-  gem 'factory_girl'
+  gem 'factory_girl_rails'
   
   gem 'cucumber-rails', :require => false
   # database_cleaner is not required, but highly recommended

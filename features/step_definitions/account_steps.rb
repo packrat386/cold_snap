@@ -16,15 +16,17 @@ Then(/^I should sign up successfully$/) do
   expect(user).not_to be_nil
 end
 
-Given(/^"(.*?)" and "(.*?)" are a valid username and password$/) do |arg1, arg2|
-  pending
+Given(/^"(.*?)" and "(.*?)" are a valid username and password$/) do |uname, pword|
+  @user = FactoryGirl.build(:user,
+                        username: uname,
+                        password: pword)
 end
 
 Then(/^I should be logged in$/) do
   pending # express the regexp above with the code you wish you had
 end
 
-Given(/^"(.*?)" and "(.*?)" are not a valid userame and password$/) do |arg1, arg2|
+Given(/^"(.*?)" and "(.*?)" are not a valid username and password$/) do |arg1, arg2|
   pending # express the regexp above with the code you wish you had
 end
 
