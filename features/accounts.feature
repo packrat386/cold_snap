@@ -30,3 +30,7 @@ Feature: accounts
     When I click "Log in"
     Then I should not be logged in
     
+  Scenario: Logout
+    Given I log in as "vcarl@butts.com" with password "secretsauce"
+    And I visit the "users/sign_out" page
+    Then I should be able to log in

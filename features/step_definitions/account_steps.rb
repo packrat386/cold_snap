@@ -49,3 +49,16 @@ Then(/^I should not be logged in$/) do
   expect(page).not_to have_content('Signed in successfully')  
 end
 
+Given(/^I log in as "(.*?)" with password "(.*?)"$/) do |email, pword|
+  visit '/users/sign_up'
+  fill_in(:user_email, :with => email)
+  fill_in(:user_password, :with => pword)
+  fill_in(:user_password_confirmation, :with => pword)
+  click_button('Sign up')
+  expect(page).to have_content('signed up successfully')
+end
+
+Then(/^I should be able to log in$/) do
+  visit '/users/sign_in'
+  expect(page).to have_content('Log in')
+end
