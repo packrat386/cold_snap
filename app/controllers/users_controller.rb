@@ -12,7 +12,6 @@ class UsersController < ApplicationController
   end
 
   def display
-    puts current_user
     render 'root'
   end
 end
