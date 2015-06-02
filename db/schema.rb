@@ -11,10 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150601200932) do
+ActiveRecord::Schema.define(version: 20150602204452) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "forecasts", force: :cascade do |t|
+    t.string   "time_accessed"
+    t.integer  "curr_precip_chance"
+    t.integer  "curr_temp"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.datetime "created_at",                          null: false
@@ -34,4 +42,16 @@ ActiveRecord::Schema.define(version: 20150601200932) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  create_table "weather_days", force: :cascade do |t|
+    t.integer  "high"
+    t.integer  "low"
+    t.integer  "precip_chance"
+    t.integer  "forecast_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  add_index "weather_days", ["forecast_id"], name: "index_weather_days_on_forecast_id", using: :btree
+
+  add_foreign_key "weather_days", "forecasts"
 end
