@@ -1,6 +1,14 @@
 Rails.application.routes.draw do
 
  
+  get 'forecasts/display'
+
+  get 'forecasts/show'
+
+  get 'forecasts/display'
+
+  get 'forecasts/show'
+
   devise_for :users
   root 'users#display'
 
