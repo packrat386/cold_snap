@@ -3,7 +3,7 @@ require 'open-uri'
 class Forecast < ActiveRecord::Base
   has_many :weather_days
 
-  def get_most_recent
+  def self.get_most_recent
     @f = Forecast.find_by time_accessed: Forecast.maximum(:time_accessed)
     if @f.nil? || @f.too_old? 
       pull
