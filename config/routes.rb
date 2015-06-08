@@ -5,15 +5,10 @@ Rails.application.routes.draw do
 
   get 'forecasts/show'
 
-  get 'forecasts/display'
+  devise_for :users, :controllers => { registrations: 'registrations' } 
+  root 'forecasts#display'
 
-  get 'forecasts/show'
-
-  devise_for :users
-  root 'users#display'
-
-  resources :forecasts
-  resources :weather_days
+  resources :users, only: [:show, :edit, :update]
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
