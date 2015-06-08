@@ -18,6 +18,9 @@ gem 'coffee-rails', '~> 4.1.0'
 gem "haml", '4.0.6'
 gem "haml-rails"
 
+# Use foundation
+gem "foundation-rails"
+
 # Use devise
 gem 'devise'
 
