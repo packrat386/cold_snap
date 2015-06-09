@@ -33,20 +33,24 @@ Given(/^"(.*?)" and "(.*?)" are a valid email and password$/) do |email, pword|
   fill_in(:user_password, :with => pword)
   fill_in(:user_password_confirmation, :with => pword)
   click_button('Sign up')
-  expect(page).to have_content('signed up successfully')
+  visit '/users/show'
+  expect(page).to have_content('success')
   visit '/users/sign_out'
 end
 
 Then(/^I should be signed up$/) do
-  expect(page).to have_content('signed up successfully')
+  visit '/users/show'
+  expect(page).to have_content('success')
 end
 
 Then(/^I should be logged in$/) do
-  expect(page).to have_content('Signed in successfully')
+  visit '/users/show'
+  expect(page).to have_content('success')
 end
 
 Then(/^I should not be logged in$/) do
-  expect(page).not_to have_content('Signed in successfully')  
+  visit '/users/show'
+  expect(page).not_to have_content('success')  
 end
 
 Given(/^I log in as "(.*?)" with password "(.*?)"$/) do |email, pword|
@@ -55,7 +59,8 @@ Given(/^I log in as "(.*?)" with password "(.*?)"$/) do |email, pword|
   fill_in(:user_password, :with => pword)
   fill_in(:user_password_confirmation, :with => pword)
   click_button('Sign up')
-  expect(page).to have_content('signed up successfully')
+  visit '/users/show'
+  expect(page).to have_content('success')
 end
 
 Then(/^I should be able to log in$/) do

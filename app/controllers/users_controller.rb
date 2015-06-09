@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
     
-  def display
+  def show
     render 'root'
   end
 end

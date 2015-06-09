@@ -61,5 +61,8 @@ group :development, :test do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+
+  # VCR records and replays API requests so I don't have tp
+  gem 'vcr'
 end
 

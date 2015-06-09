@@ -3,16 +3,6 @@ Feature: daily_weather
   I want to see the weather today
   So that I can stay warm and dry
 
-Scenario: Is Raining
-  Given It is raining
-  When I go to "/"
-  Then I will see that it is raining
-
-Scenario: Is not Raining
-  Given It is not raining
-  When I go to "/"
-  Then I will see that it is not raining
-
 Scenario: Current Temp
   Given The temperature is "85"
   When I go to "/"

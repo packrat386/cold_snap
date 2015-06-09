@@ -5,7 +5,7 @@ class Forecast < ActiveRecord::Base
 
   def self.get_most_recent(zipcode)
     @f = Forecast.find_by time_accessed: Forecast.where(zipcode: zipcode).maximum(:time_accessed)
-    if @f.nil? || @f.too_old? || @f.zipcode != zipcode
+    if @f.nil? || @f.too_old?
       pull(zipcode)
     else
       @f
